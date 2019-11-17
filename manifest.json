@@ -17,16 +17,10 @@
     }
   ],
 
-  "background": {
-    "scripts": ["popup.js"]
-  },
-
   "permissions": [
     "activeTab",
     "tabs",
-    "bookmarks",
     "https://swap.gg/",
-    "unlimitedStorage",
     "alarms"
   ]
 }
