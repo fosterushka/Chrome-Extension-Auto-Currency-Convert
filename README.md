@@ -13,7 +13,7 @@
   
 | Site | Link |
 | ------ | ------ |
-| swap.gg | [https://swap.gg/][PlGh] |
+| swap.gg | [https://swap.gg/] |
 
 You can also:
   - Create pull request to help develop this plugin
