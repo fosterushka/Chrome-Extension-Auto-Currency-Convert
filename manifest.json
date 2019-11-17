@@ -1,26 +1,16 @@
 {
   "manifest_version": 2,
-
   "name": "AyMan Price",
-  "description": "asd up1",
+  "description": "Convert currency",
   "version": "1.0",
-
-  "browser_action": {
-    "default_icon": "icon.png",
+  "page_action": {
     "default_popup": "index.html"
   },
-
   "content_scripts": [
     {
       "matches": ["https://swap.gg/"],
-      "js": ["script.js"]
+      "js": ["jquery.js", "script.js"]
     }
   ],
-
-  "permissions": [
-    "activeTab",
-    "tabs",
-    "https://swap.gg/",
-    "alarms"
-  ]
+  "permissions": ["storage","activeTab","declarativeContent"]
 }
