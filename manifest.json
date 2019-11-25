@@ -3,12 +3,13 @@
   "name": "AyMan Price",
   "description": "Convert currency",
   "version": "1.0",
-  "page_action": {
+  "browser_action": {
+    "default_icon": "AM.png",
     "default_popup": "index.html"
   },
   "content_scripts": [
     {
-      "matches": ["https://swap.gg/"],
+      "matches": ["https://swap.gg/","https://dmarket.com/"],
       "js": ["jquery.js", "script.js"]
     }
   ],

@@ -13,3 +13,4 @@ chrome.declarativeContent.onPageChanged.removeRules(undefined,function () {
         action: [new chrome.declarativeContent.ShowPageAction()]
    }]);
 });
+
