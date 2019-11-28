@@ -1,10 +1,10 @@
-var currency = 63.99;
+const currency = 63.99;
 
-setInterval(startParse,5000);
+setInterval(startParse,1000);
 setTimeout(startParse, 0);
 function startParse() {
-    let x = document.querySelectorAll('.price:not(.checked-item)');
-    let y = document.querySelectorAll('.price .checked-item');
+    let x = document.querySelectorAll('.price:not(.checked-item), div.product-price:not(.checked-item), #price_inside_buybox:not(.checked-item), #priceblock_dealprice:not(.checked-item), .priceBlockStrikePriceString:not(.checked-item)');
+    let y = document.querySelectorAll('.price .checked-item, div.product-price, #price_inside_buybox, #priceblock_dealprice, .priceBlockStrikePriceString');
     if (x) {
         for (i = 0; i < x.length; i++) {
             let text = x.item(i).innerText.replace('$', '');
