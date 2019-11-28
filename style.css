@@ -1,4 +1,15 @@
-.checked-item {
-    background: red;
-    color: white;
+* {margin: 0;padding: 0; user-select: none; text-transform: uppercase;}
+form {
+    display: inline-flex;
+    flex-direction: column;
+    max-width: 500px;
+    background-color: lightskyblue;
+}
+.currency_block {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+hr {
+    margin: 10px 0;
 }
