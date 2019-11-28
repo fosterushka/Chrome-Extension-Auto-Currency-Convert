@@ -1,17 +1,21 @@
 {
   "manifest_version": 2,
+  "icons": { "128": "assets/img/AM.png" },
   "name": "AyMan Price",
   "description": "Convert currency",
   "version": "1.5",
   "browser_action": {
-    "default_icon": "AM.png",
-    "default_popup": "index.html"
+    "default_icon": "assets/img/AM.png",
+    "default_popup": "popup.html"
   },
   "content_scripts": [
     {
-      "matches": ["http://*/*","https://*/*"],
-      "js": ["jquery.js", "script.js"]
+      "matches": ["https://swap.gg/*","https://amazon.com/*","https://dmarket.com/*"],
+      "css": ["assets/css/style.css"],
+      "js": ["assets/js/jquery.js", "assets/js/script.js"]
     }
   ],
-  "permissions": ["storage","activeTab","declarativeContent"]
+  "permissions": ["storage","activeTab","declarativeContent"],
+  "web_accessible_resources": [ "js/*", "html/*", "css/*", "images/*" ],
+  "content_security_policy": "script-src 'self'; object-src 'self'; 'unsafe-inline'"
 }

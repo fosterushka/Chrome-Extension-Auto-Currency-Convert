@@ -3,9 +3,9 @@
 
 **_A Google Chrome Extension which help to convert currency._**
 
-![Demo](demo.png) 
+![Demo](assets/img/demo.png) 
 
-![Notice](notice.svg) 
+![Notice](assets/img/notice.svg) 
 
 ### **[Download][https://github.com/AydievMansur/price_parse_chrome/archive/master.zip]** `*WIP`
 ##### ROADMAP!

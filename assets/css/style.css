@@ -10,6 +10,10 @@ form {
     flex-direction: column;
 }
 
+.items .item .price {
+    background-color: darkgreen;
+}
+
 hr {
     margin: 10px 0;
 }
