@@ -4,6 +4,8 @@ chrome.runtime.onInstalled.addListener(function () {
     }
 });
 
+console.log('AyMan Currency is Enabled');
+
 chrome.declarativeContent.onPageChanged.removeRules(undefined,function () {
    chrome.declarativeContent.onPageChanged.addRules([{
        conditions: [new chrome.declarativeContent.PageStateMatcher({

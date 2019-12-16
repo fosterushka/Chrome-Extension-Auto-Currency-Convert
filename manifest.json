@@ -10,7 +10,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://swap.gg/*","https://amazon.com/*","https://dmarket.com/*"],
+      "matches": ["https://swap.gg/*","https://amazon.com/*","https://dmarket.com/*","https://gearbest.com/*", "https://ru.gearbest.com/*"],
       "css": ["assets/css/style.css"],
       "js": ["assets/js/jquery.js", "assets/js/script.js"]
     }

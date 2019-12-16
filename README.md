@@ -1,5 +1,7 @@
 # Chrome Price Converter
-`*WIP - Work In Progress, which means this plugin still have a lot of bugs,glitches,sometimes can not work properly etc`
+`*WIP - Work In Progress still have a lot of bugs,sometimes can not work properly`
+
+`*For reduce usage of the your RAM, extension will work only while you click on it once`
 
 **_A Google Chrome Extension which help to convert currency._**
 
@@ -23,6 +25,7 @@
 | swap.gg | [https://swap.gg/] |
 | dmarket.com | [https://dmarket.com/] |
 | amazon.com | [https://amazon.com/] |
+| gearbest.com | [https://gearbest.com/] |
 
 You can also:
   - Create pull request to help develop this plugin
