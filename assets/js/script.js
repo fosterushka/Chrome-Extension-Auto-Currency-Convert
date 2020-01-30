@@ -1,6 +1,7 @@
 $(window).ready(function () {
-    const currency = 63.99;
 
+    let getCurrency = $.getJSON('https://api.exchangeratesapi.io/latest');
+    let rub = getCurrency.responseJSON.rates.RUB;
     setInterval(startParse, 1000);
     setTimeout(startParse, 0);
 
@@ -10,14 +11,14 @@ $(window).ready(function () {
         if (x) {
             for (i = 0; i < x.length; i++) {
                 let text = x.item(i).innerText.replace('$', '');
-                let ready = parseFloat(text) * currency;
+                let ready = parseFloat(text) * rub;
                 x.item(i).classList.add("checked-item");
                 x.item(i).innerText = ('₽' + ready.toFixed(2));
             }
         } else {
             for (i = 0; i < y.length; i++) {
                 let text = y.item(i).innerText.replace('$', '');
-                let ready = parseFloat(text) * currency;
+                let ready = parseFloat(text) * rub;
                 y.item(i).innerText = ('₽' + ready.toFixed(2));
             }
         }

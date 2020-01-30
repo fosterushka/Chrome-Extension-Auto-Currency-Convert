@@ -1,19 +1,2 @@
-* {margin: 0;padding: 0; user-select: none; text-transform: uppercase;}
-form {
-    display: inline-flex;
-    flex-direction: column;
-    max-width: 500px;
-    background-color: lightskyblue;
-}
-.currency_block {
-    display: inline-flex;
-    flex-direction: column;
-}
-
-.items .item .price {
-    background-color: darkgreen;
-}
-
-hr {
-    margin: 10px 0;
-}
+/*Currently Still Work with UI Design*/
+* {user-select: none;}

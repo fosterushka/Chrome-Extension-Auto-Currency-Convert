@@ -3,10 +3,9 @@
   "icons": { "128": "assets/img/AM.png" },
   "name": "AyMan Price",
   "description": "Convert currency",
-  "version": "1.5",
+  "version": "1.6",
   "browser_action": {
-    "default_icon": "assets/img/AM.png",
-    "default_popup": "popup.html"
+    "default_icon": "assets/img/AM.png"
   },
   "content_scripts": [
     {
