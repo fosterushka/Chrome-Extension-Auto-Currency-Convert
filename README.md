@@ -1,7 +1,7 @@
 # Chrome Price Converter
 `*WIP - Work In Progress still have a lot of bugs,sometimes can not work properly`
 
-`*For reduce usage of the your RAM, extension will work only while you click on it once`
+`*For reduce usage of the your RAM, extension will work only when you click on it once`
 
 **_A Google Chrome Extension which help to convert currency._**
 
