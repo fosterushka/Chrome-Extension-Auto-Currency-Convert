@@ -1,7 +1,13 @@
-$(window).ready(function () {
+window.ready = async function () {
 
-    let getCurrency = $.getJSON('https://api.exchangeratesapi.io/latest');
-    let rub = getCurrency.responseJSON.rates.RUB;
+
+    let getApiCurrency = await fetch('https://api.exchangeratesapi.io/latest?symbols=USD,RUB');
+
+    console.log(getApiCurrency.json());
+
+
+    await (getCurrency);
+    // let rub = getCurrency.responseJSON.rates.RUB;
     setInterval(startParse, 1000);
     setTimeout(startParse, 0);
 
@@ -23,4 +29,4 @@ $(window).ready(function () {
             }
         }
     }
-});
+};
