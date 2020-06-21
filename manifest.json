@@ -3,7 +3,7 @@
   "icons": { "128": "assets/img/AM.png" },
   "name": "AyMan Price",
   "description": "Convert currency",
-  "version": "1.6",
+  "version": "1.7",
   "browser_action": {
     "default_icon": "assets/img/AM.png"
   },
@@ -11,7 +11,7 @@
     {
       "matches": ["https://swap.gg/*","https://amazon.com/*","https://dmarket.com/*","https://gearbest.com/*", "https://ru.gearbest.com/*"],
       "css": ["assets/css/style.css"],
-      "js": ["assets/js/jquery.js", "assets/js/script.js"]
+      "js": ["assets/js/script.js"]
     }
   ],
   "permissions": ["storage","activeTab","declarativeContent"],
