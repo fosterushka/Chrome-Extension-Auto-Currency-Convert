@@ -5,6 +5,8 @@
 
 **_A Google Chrome Extension which help to convert currency._**
 
+![Concept Menu](assets/img/Menu.png) 
+
 ![Demo](assets/img/demo.png) 
 
 ![Notice](assets/img/notice.svg) 
