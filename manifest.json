@@ -9,12 +9,12 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://swap.gg/*","https://amazon.com/*","https://dmarket.com/*","https://gearbest.com/*", "https://ru.gearbest.com/*"],
+     # "matches": ["https://swap.gg/*","https://amazon.com/*","https://dmarket.com/*","http "],
       "css": ["assets/css/style.css"],
       "js": ["assets/js/script.js"]
     }
   ],
-  "permissions": ["storage","activeTab","declarativeContent"],
+  "permissions": ["storage","activeTab","declarativeContent"], #commented matches cuz has access to active Tab, user given prompt about read activeTab
   "web_accessible_resources": [ "js/*", "html/*", "css/*", "images/*" ],
   "content_security_policy": "script-src 'self'; object-src 'self'; 'unsafe-inline'"
 }
