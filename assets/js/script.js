@@ -7,35 +7,41 @@
 //setTimeout(startParse, 0);
 var rub = 75;
 const websitesList = [
-    {"website":'https://swap.gg/', "class" : "div.item span.p"},
-    {"website":'https://amazon.com/', "class" : ".price"},
-    {"website":'https://dmarket.com/', "class" : ".price"},
+    { "website": 'https://swap.gg/', "class": "div.item span.p" },
+    { "website": 'https://amazon.com/', "class": ".price" },
+    { "website": 'https://gearbest.com/', "class": ".price" },
 ];
 var currentSite = websitesList.filter(element => {
     for (var property in element) {
         if (element.hasOwnProperty(property)) {
-            if(element[property] == window.location.href) {
+            if (element[property] == window.location.href) {
                 return true;
             }
         }
     }
 });
 
-function startParse() {
-    let x = document.querySelectorAll(currentSite+':not(.checked-item)');
-    let y = document.querySelectorAll(currentSite+'.checked-item');
-    if (x) {
-        for (i = 0; i < x.length; i++) {
-            let text = x.item(i).innerText.replace('$', '');
-            let ready = parseFloat(text) * rub;
-            x.item(i).classList.add("checked-item");
-            x.item(i).innerText = ('₽' + ready.toFixed(2));
+function starParse() {
+    var currentSiteSelector = currentSite[0].class;
+    var notParsedItems = document.querySelectorAll(currentSiteSelector + ":not(.checked-item)");
+    console.log(notParsedItems);
+    var parsedItem = document.querySelectorAll(currentSiteSelector + '.checked-item');
+    if (notParsedItems) {
+        for (i = 0; i < notParsedItems.length; i++) {
+            var text = notParsedItems.item(i).innerText.replace('$', '');
+            var ready = parseFloat(text) * rub;
+            notParsedItems.item(i).classList.add("checked-item");
+            notParsedItems.item(i).innerText = ('₽' + ready.toFixed(2));
         }
     } else {
-        for (i = 0; i < y.length; i++) {
-            let text = y.item(i).innerText.replace('$', '');
-            let ready = parseFloat(text) * rub;
-            y.item(i).innerText = ('₽' + ready.toFixed(2));
+        for (i = 0; i < parsedItem.length; i++) {
+            var text = parsedItem.item(i).innerText.replace('$', '');
+            var ready = parseFloat(text) * rub;
+            parsedItem.item(i).innerText = ('₽' + ready.toFixed(2));
         }
     }
 }
+
+window.addEventListener("load", () => {
+    setInterval(() => starParse(), 5000);
+});
