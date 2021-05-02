@@ -1,5 +1,5 @@
 console.log('ayman exchange injected');
-
+//its time to flickin rewrite it
 //if (!localStorage.hasOwnProperty('currency')) {
 //    let getApiCurrency = fetch('https://api.exchangeratesapi.io/latest?symbols=USD,RUB');
 //    console.log(getApiCurrency);
@@ -9,7 +9,7 @@ console.log('ayman exchange injected');
 //}
 //setInterval(startParse, 1000);
 //setTimeout(startParse, 0);
-
+let rub = 75;
 const websitesUtils = [
     {"website":'https://swap.gg/*', "class" : "div.item span.p"},
     {"website":'https://amazon.com/*', "class" : ".price"},
