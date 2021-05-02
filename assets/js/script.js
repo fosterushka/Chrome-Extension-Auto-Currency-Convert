@@ -6,20 +6,39 @@
 //setInterval(startParse, 1000);
 //setTimeout(startParse, 0);
 var rub = 75;
-const websitesList = [
-    { "website": 'https://swap.gg/', "class": "div.item span.p" },
-    { "website": 'https://amazon.com/', "class": ".price" },
-    { "website": 'https://gearbest.com/', "class": ".price" },
-];
-var currentSite = websitesList.filter(element => {
-    for (var property in element) {
-        if (element.hasOwnProperty(property)) {
-            if (element[property] == window.location.href) {
-                return true;
-            }
-        }
-    }
-});
+//const websitesList = [
+//    { "website": 'https://swap.gg/', "class": "div.item span.p" },
+//    { "website": 'https://amazon.com/', "class": ".a-color-price" },
+//    { "website": 'https://gearbest.com/', "class": ".price" },
+//];
+//console.log(window.location.href);
+//var currentSite = websitesList.filter(element => {
+//    for (var property in element) {
+//        if (element.hasOwnProperty(property)) {
+//            if (element[property] == window.location.href) {
+//                return true;
+//            }
+//        }
+//    }
+//});
+function selectPriceElement() {
+    console.log('selectPriceElement');
+    document.body.addEventListener("mouseover", function (e) {
+        e.stopPropagation();
+        e.target.addEventListener("mouseout", function (e) {
+            e.target.className = e.target.className.replace(new RegExp(" highlight\\b", "g"), "");
+        });
+        e.target.className += " highlight";
+        console.log(e.target.text);
+    });
+    return element += true;
+}
+
+var element = null;
+
+if (!element) {
+    selectPriceElement();
+}
 
 function starParse() {
     var currentSiteSelector = currentSite[0].class;
@@ -42,6 +61,6 @@ function starParse() {
     }
 }
 
-window.addEventListener("load", () => {
-    setInterval(() => starParse(), 5000);
-});
+//window.addEventListener("load", () => {
+//    setInterval(() => starParse(), 5000);
+//});

@@ -5,13 +5,13 @@
   "description": "Auto Converting currency",
   "version": "1.9",
   "browser_action": {
-    "default_icon": "assets/img/AM.png"
+    "default_icon": "assets/img/AM.png",
+    "default_popup": "popup.html"
   },
   "content_scripts": [
     {
       "matches": ["https://swap.gg/*","https://amazon.com/*","https://dmarket.com/*"],
-      "css": ["assets/css/style.css"],
-      "js": ["assets/js/script.js"]
+      "css": ["assets/css/style.css"]
     }
   ],
   "permissions": ["storage","activeTab","declarativeContent","scripting"],
