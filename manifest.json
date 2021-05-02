@@ -1,20 +1,23 @@
 {
   "manifest_version": 2,
   "icons": { "128": "assets/img/AM.png" },
-  "name": "AyMan Price",
-  "description": "Convert currency",
-  "version": "1.7",
+  "name": "AM_Rate_Currency",
+  "description": "Auto Converting currency",
+  "version": "1.9",
   "browser_action": {
     "default_icon": "assets/img/AM.png"
   },
   "content_scripts": [
     {
-     # "matches": ["https://swap.gg/*","https://amazon.com/*","https://dmarket.com/*","http "],
+      "matches": ["https://swap.gg/*","https://amazon.com/*","https://dmarket.com/*"],
       "css": ["assets/css/style.css"],
       "js": ["assets/js/script.js"]
     }
   ],
-  "permissions": ["storage","activeTab","declarativeContent"], #commented matches cuz has access to active Tab, user given prompt about read activeTab
+  "permissions": ["storage","activeTab","declarativeContent","scripting"],
   "web_accessible_resources": [ "js/*", "html/*", "css/*", "images/*" ],
-  "content_security_policy": "script-src 'self'; object-src 'self'; 'unsafe-inline'"
+  "content_security_policy": "script-src 'self'; object-src 'self'; 'unsafe-inline'",
+  "background": {
+    "service_worker": "assets/js/script.js"
+  }
 }
