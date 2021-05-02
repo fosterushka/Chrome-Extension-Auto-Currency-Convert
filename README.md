@@ -1,5 +1,5 @@
 # Chrome Price Converter
-`*WIP - Work In Progress still have a lot of bugs,sometimes can not work properly`
+`*WIP - Work In Progress still have a lot of bugs,sometimes will not work as expected`
 
 `*For reduce usage of the your RAM, extension will work only when you click on it once`
 
