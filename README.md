@@ -15,7 +15,7 @@
 ##### ROADMAP!
 
   - Friendly UI
-  - Open API[?]
+  - Open API[?]*(as a free service for websites integration)
   - ~~MultiSite Support~~
   - ~~Chrome Integration~~;
   - Deploy to Chrome Store;
@@ -25,9 +25,8 @@
 | Site | Link |
 | ------ | ------ |
 | swap.gg | [https://swap.gg/] |
-| dmarket.com | [https://dmarket.com/] |
-| amazon.com | [https://amazon.com/] |
-| gearbest.com | [https://gearbest.com/] |
+| ~~amazon.com~~ | ~~[https://amazon.com/]~~ |
+| ~~gearbest.com~~ | ~~[https://gearbest.com/]~~ |
 
 You can also:
   - Create pull request to help develop this plugin

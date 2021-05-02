@@ -1,28 +1,29 @@
-console.log('ayman exchange injected');
 //its time to flickin rewrite it
+//store currency exchange from
 //if (!localStorage.hasOwnProperty('currency')) {
 //    let getApiCurrency = fetch('https://api.exchangeratesapi.io/latest?symbols=USD,RUB');
-//    console.log(getApiCurrency);
-//    console.log(JSON.stringify(getApiCurrency));
-//    let rate_currency = window.localStorage.setItem('rate_currency', (getApiCurrency));
-//    console.log(JSON.stringify(getApiCurrency));
 //}
 //setInterval(startParse, 1000);
 //setTimeout(startParse, 0);
-let rub = 75;
-const websitesUtils = [
-    {"website":'https://swap.gg/*', "class" : "div.item span.p"},
-    {"website":'https://amazon.com/*', "class" : ".price"},
-    {"website":'https://dmarket.com/*', "class" : ".price"},
+var rub = 75;
+const websitesList = [
+    {"website":'https://swap.gg/', "class" : "div.item span.p"},
+    {"website":'https://amazon.com/', "class" : ".price"},
+    {"website":'https://dmarket.com/', "class" : ".price"},
 ];
-console.log(websitesUtils);
-websitesUtils.find(window.location.href);
-console.log(websitesUtils);
-
+var currentSite = websitesList.filter(element => {
+    for (var property in element) {
+        if (element.hasOwnProperty(property)) {
+            if(element[property] == window.location.href) {
+                return true;
+            }
+        }
+    }
+});
 
 function startParse() {
-    let x = document.querySelectorAll('div.item span.p:not(.checked-item)');
-    let y = document.querySelectorAll('div.item span.p.checked-item');
+    let x = document.querySelectorAll(currentSite+':not(.checked-item)');
+    let y = document.querySelectorAll(currentSite+'.checked-item');
     if (x) {
         for (i = 0; i < x.length; i++) {
             let text = x.item(i).innerText.replace('$', '');
