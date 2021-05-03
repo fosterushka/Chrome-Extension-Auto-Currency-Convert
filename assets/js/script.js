@@ -1,47 +1,38 @@
 //its time to flickin rewrite it
-//store currency exchange from
-//if (!localStorage.hasOwnProperty('currency')) {
-//    let getApiCurrency = fetch('https://api.exchangeratesapi.io/latest?symbols=USD,RUB');
-//}
-//setInterval(startParse, 1000);
-//setTimeout(startParse, 0);
+console.log('CurrencyConverter by AyManXd Injected');
 var rub = 75;
 const websitesList = [
-    { "website": 'https://swap.gg/', "class": "div.item span.p" },
-    { "website": 'https://amazon.com/', "class": ".price" },
-    { "website": 'https://gearbest.com/', "class": ".price" },
+    { "website": 'https://swap.gg', "class": "div.item span.p" },
+    { "website": 'https://www.amazon.com', "class": ".a-color-price" },
 ];
+
 var currentSite = websitesList.filter(element => {
-    for (var property in element) {
-        if (element.hasOwnProperty(property)) {
-            if (element[property] == window.location.href) {
-                return true;
-            }
-        }
+    console.log(document.location.origin,element.website);
+    if (element.website == document.location.origin) {
+        return true;
     }
 });
+
+if (currentSite) {
+    setInterval(() => starParse(), 3000);
+}
 
 function starParse() {
     var currentSiteSelector = currentSite[0].class;
     var notParsedItems = document.querySelectorAll(currentSiteSelector + ":not(.checked-item)");
-    console.log(notParsedItems);
     var parsedItem = document.querySelectorAll(currentSiteSelector + '.checked-item');
     if (notParsedItems) {
         for (i = 0; i < notParsedItems.length; i++) {
             var text = notParsedItems.item(i).innerText.replace('$', '');
-            var ready = parseFloat(text) * rub;
+            var ready = parseFloat(text.replace(/,/g, '')) * rub;
             notParsedItems.item(i).classList.add("checked-item");
             notParsedItems.item(i).innerText = ('₽' + ready.toFixed(2));
         }
     } else {
         for (i = 0; i < parsedItem.length; i++) {
             var text = parsedItem.item(i).innerText.replace('$', '');
-            var ready = parseFloat(text) * rub;
+            var ready = parseFloat(text.replace(/,/g, '')) * rub;
             parsedItem.item(i).innerText = ('₽' + ready.toFixed(2));
         }
     }
 }
-
-window.addEventListener("load", () => {
-    setInterval(() => starParse(), 5000);
-});
