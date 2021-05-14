@@ -9,12 +9,12 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://swap.gg/*","https://amazon.com/*","https://dmarket.com/*"],
+      "matches": ["https://*/*"],
       "css": ["assets/css/style.css"],
-      "js": ["assets/js/script.js"]
+      "js": ["assets/js/amrCore.js"]
     }
   ],
   "permissions": ["storage","activeTab","declarativeContent","scripting"],
-  "web_accessible_resources": [ "js/*", "html/*", "css/*", "images/*" ],
+  "web_accessible_resources": [ "js/*", "html/*", "css/*"],
   "content_security_policy": "script-src 'self'; object-src 'self'; 'unsafe-inline'"
 }
