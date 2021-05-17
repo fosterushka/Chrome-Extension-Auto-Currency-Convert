@@ -1,6 +1,6 @@
-//Chrome extension, i work on it only when i do have free time )
+//Chrome extension, i only work on it when I have free time 😊
 //Feel free to create pull request
-//made by @idevmans aka AyManXd 2019-2020
+//made by @idevmans aka AyManXd 2019-2021
 
 console.log('CurrencyConverter by AyManXd Injected');
 
@@ -10,11 +10,11 @@ console.log('CurrencyConverter by AyManXd Injected');
 //}
 //console.log(apiFetch());
 
-let rub = 75 //hardcoded for a while
+let currencyApi = 75 //hardcoded for a while
 
-//move it to remote server e.g google sheets and parse it to keep up to date
+//store it somewhere else
 const websitesList = [
-    { "website": 'https://swap.gg', "class": "div.item span.p" },
+    { "website": 'https://swap.gg', "class": "div.item span.p", "regex": /\$+|,/g },
     { "website": 'https://www.amazon.com', "class": ".a-color-price" },
 ];
 
@@ -29,40 +29,26 @@ function nodeListToArray(nodeToArr) {
     return Array.prototype.slice.call(nodeToArr);
 }
 
-function itemToObjectFactory(foreachItem) {
-    
+function objectProcessing(foreachItem) {
+    let produce = foreachItem.innerText.replace(/\$+|,/g, '') * currencyApi;
+    return produce.toFixed(2);
 }
 
 function starParse() {
-    var currentSiteSelector = currentSite[0].class;
-    var notParsedItems = document.querySelectorAll(currentSiteSelector + ":not(.amr-parsed-item)");
-    var parsedItem = document.querySelectorAll(currentSiteSelector + '.amr-parsed-item');
-    var reg = /^\d+$/;
-     if (notParsedItems) {
+    var classSelector = currentSite[0].class;
+    var notParsedItems = document.querySelectorAll(classSelector + ":not(.amr-parsed-item)");
+    var parsedItem = document.querySelectorAll(classSelector + '.amr-parsed-item');
+    if (notParsedItems) {
         nodeListToArray(notParsedItems).forEach(el => {
-            el.innerHTML = el.innerHTML.replace(reg, '') * rub;
+            el.innerText = objectProcessing(el);
             el.classList.add("amr-parsed-item");
         });
-     } else {
-         nodeListToArray(parsedItem).forEach(el => {
-            el.innerHTML = el.innerHTML.replace(reg, '') * rub;
-         });
-     }
-    
-    //if (notParsedItems) {
-    //    for (i = 0; i < notParsedItems.length; i++) {
-    //        var text = notParsedItems.item(i).innerText.replace('$', '');
-    //        var ready = parseFloat(text.replace(/,/g, '')) * rub;
-    //        notParsedItems.item(i).classList.add("checked-item");
-    //        notParsedItems.item(i).innerText = ('₽' + ready.toFixed(2));
-    //    }
-    //} else {
-    //    for (i = 0; i < parsedItem.length; i++) {
-    //        var text = parsedItem.item(i).innerText.replace('$', '');
-    //        var ready = parseFloat(text.replace(/,/g, '')) * rub;
-    //        parsedItem.item(i).innerText = ('₽' + ready.toFixed(2));
-    //    }
-    //}
+    } else {
+        nodeListToArray(parsedItem).forEach(el => {
+            objectProcessing(el);
+            el.classList.add("amr-parsed-item");
+        });
+    }
 }
 
 if (currentSite) {
