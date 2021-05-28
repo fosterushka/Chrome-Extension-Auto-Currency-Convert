@@ -1,9 +1,9 @@
 # Chrome Price Converter
-`*WIP - Work In Progress still have a lot of bugs,sometimes will not work as expected`
+`*WIP - Work In Progress still has a lot of bugs.
 
 `*For reduce usage of the your RAM, extension will work only when you click on it once`
 
-**_A Google Chrome Extension which help to convert currency._**
+**_A Google Chrome Extension that help you to convert currency._**
 
 ![Concept Menu](assets/img/Menu.png) 
 
