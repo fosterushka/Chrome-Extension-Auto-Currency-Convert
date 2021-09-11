@@ -15,7 +15,6 @@ let currencyApi = 75 //hardcoded for a while
 //store it somewhere else
 const websitesList = [
     { "website": 'https://swap.gg', "class": "div.item span.p", "regex": /\$+|,/g },
-    { "website": 'https://www.amazon.com', "class": ".a-color-price" },
 ];
 
 var currentSite = websitesList.filter(element => {
