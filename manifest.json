@@ -3,7 +3,7 @@
   "icons": { "128": "assets/img/AM.png" },
   "name": "AM_Rate_Currency",
   "description": "Auto Converting currency",
-  "version": "1.9.1",
+  "version": "1.9.2",
   "action": {
     "default_icon": "assets/img/AM.png"
   },
@@ -11,7 +11,7 @@
     {
       "matches": ["https://*/*"],
       "css": ["assets/css/style.css"],
-      "js": ["assets/js/amrCore.js"]
+      "js": ["assets/js/app.js"]
     }
   ],
   "permissions": ["storage","activeTab","declarativeContent","scripting"],
