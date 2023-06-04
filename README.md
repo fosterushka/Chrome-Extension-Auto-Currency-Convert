@@ -1,37 +1,31 @@
-# Chrome Price Converter
-`*WIP - Work In Progress still has a lot of bugs.
+# Price Converter - Chrome Extension 🌐💰
 
-`*For reduce usage of the your RAM, extension will work only when you click on it once`
+⚙️ **Work In Progress** ⚠️ Still has a lot of bugs.
 
-**_A Google Chrome Extension that help you to convert currency._**
+ℹ️ **For reduced RAM usage, the extension will only work when you click on it once.**
 
-![Concept Menu](assets/img/Menu.jpg) 
+🔥 A Google Chrome Extension that helps you convert currency on any website !
 
-![Demo](assets/img/demo.jpg) 
+| 🎥 Demo  | 📋 Concept Menu |
+|-------|---------|
+| ![Concept Menu](assets/img/Menu.jpg)  | ![Demo](assets/img/demo.jpg)      |
 
-![Notice](assets/img/notice.svg) 
+## 📢 Notice
+### <span style="color:red">🐞 Found a bug? <br> Please open an issue! Your help is greatly appreciated! 🙏🔧</span>
 
-### **[Download][https://github.com/AydievMansur/price_parse_chrome/archive/master.zip]** `*WIP`
-##### ROADMAP!
+### [Download](https://github.com/AydievMansur/price_parse_chrome/archive/master.zip) ⚡️ **WIP**
 
-  - Friendly UI
-  - Open API[?]*(as a free service for websites integration)
-  - ~~MultiSite Support~~
-  - ~~Chrome Integration~~;
-  - Deploy to Chrome Store;
-  
-##### Current Supported Site
-  
-| Site | Link |
-| ------ | ------ |
-| swap.gg | [https://swap.gg/] |
-| ~~amazon.com~~ | ~~[https://amazon.com/]~~ |
-| ~~gearbest.com~~ | ~~[https://gearbest.com/]~~ |
+##### 🚀 ROADMAP!
 
-You can also:
-  - Create pull request to help develop this plugin
-  - All contributors will mention at this repository
-  
+- 👌 Friendly UI
+- 🔓 Open API (as a free service for website integration)
+- ~~MultiSite Support~~
+- ~~Chrome Integration~~
+- Deploy to Chrome Store
 
+🙌 You can also:
 
-[https://github.com/AydievMansur/price_parse_chrome/archive/master.zip]: https://github.com/AydievMansur/price_parse_chrome/archive/master.zip
+- Create a pull request to help develop this plugin
+- All contributors will be mentioned in this repository
+
+[Download](https://github.com/AydievMansur/price_parse_chrome/archive/master.zip)

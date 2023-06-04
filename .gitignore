@@ -1,1 +1,4 @@
 .vscode
+**/*.Identifier
+.idea
+.**/*.DS_Store
