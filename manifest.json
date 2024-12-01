@@ -1,22 +1,29 @@
 {
   "manifest_version": 3,
-  "icons": { "128": "assets/img/AM.png" },
-  "name": "AM_Rate_Currency",
-  "description": "Auto Converting currency",
-  "version": "1.9.2",
+  "name": "Currency Converter",
+  "description": "Automatically convert currencies on any webpage",
+  "version": "1.0.0",
+  "icons": {
+    "128": "assets/img/Menu.jpg"
+  },
   "action": {
-    "default_icon": "assets/img/AM.png"
+    "default_popup": "popup.html"
   },
   "content_scripts": [
     {
-      "matches": ["https://*/*"],
-      "css": ["assets/css/style.css"],
-      "js": ["assets/js/app.js"]
+      "matches": ["<all_urls>"],
+      "js": ["assets/js/app.js"],
+      "run_at": "document_end"
     }
   ],
-  "permissions": ["storage","activeTab","declarativeContent","scripting"],
-  "content_security_policy": {
-    "script-src": "self",
-    "object-src": "self"
-  }
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://api.exchangerate-api.com/*",
+    "<all_urls>"
+  ]
 }
