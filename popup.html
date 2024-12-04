@@ -4,161 +4,280 @@
 <head>
     <meta charset="UTF-8">
     <style>
+        :root {
+            --primary-color: #4a9eff;
+            --primary-light: rgba(74, 158, 255, 0.1);
+            --text-primary: #2d3748;
+            --text-secondary: #718096;
+            --border-color: #e2e8f0;
+            --bg-hover: #f0f7ff;
+            --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+            --radius-sm: 8px;
+            --radius-lg: 12px;
+            --spacing-xs: 4px;
+            --spacing-sm: 8px;
+            --spacing-md: 12px;
+            --spacing-lg: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             width: 300px;
-            padding: 15px;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            padding: var(--spacing-md);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
+                sans-serif;
             background: linear-gradient(135deg, #f6f8ff 0%, #ffffff 100%);
-            margin: 0;
+            position: relative;
+            min-height: 400px;
         }
 
         .currency-container {
             display: flex;
             flex-direction: column;
-            gap: 20px;
-            align-items: center;
-            padding: 15px;
+            gap: var(--spacing-lg);
+            padding: var(--spacing-md);
             background: white;
-            border-radius: 16px;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            z-index: 1;
         }
 
         .currency-box {
-            width: 100%;
-            text-align: center;
-            padding: 20px;
-            background: #f0f7ff;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            padding: var(--spacing-lg);
+            background: var(--primary-light);
+            border-radius: var(--radius-lg);
+            transition: all 0.2s ease;
             border: 2px solid transparent;
+            text-align: center;
         }
 
         .currency-box:hover {
-            background: #e6f2ff;
+            border-color: var(--primary-color);
             transform: translateY(-2px);
-            border-color: #4a9eff;
         }
 
         .currency-code {
-            font-size: 24px;
-            font-weight: bold;
-            color: #2d3748;
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-primary);
+            padding: var(--spacing-xs) var(--spacing-md);
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            background: white;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s ease;
+        }
+
+        .currency-code:after {
+            content: "▼";
+            font-size: 10px;
+            opacity: 0.6;
+        }
+
+        .currency-code:hover {
+            border-color: var(--primary-color);
+            background: var(--bg-hover);
         }
 
         .currency-amount {
-            font-size: 32px;
-            margin: 10px 0;
-            color: #4299e1;
+            font-size: 28px;
+            margin: var(--spacing-sm) 0;
+            color: var(--primary-color);
             font-weight: 600;
+            outline: none;
+            min-width: 50px;
+            cursor: text;
+            padding: var(--spacing-xs) var(--spacing-md);
+            border-radius: var(--radius-sm);
+        }
+
+        .currency-amount:focus {
+            background: var(--primary-light);
+        }
+
+        .currency-amount:empty:before {
+            content: "0.00";
+            color: var(--text-secondary);
+            opacity: 0.5;
         }
 
         .switch-button {
-            width: 44px;
-            height: 44px;
+            align-self: center;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #4a9eff 0%, #3182ce 100%);
+            background: var(--primary-color);
             border: none;
             color: white;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 20px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(66, 153, 225, 0.3);
+            font-size: 16px;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 8px rgba(74, 158, 255, 0.3);
         }
 
         .switch-button:hover {
             transform: rotate(180deg);
-            box-shadow: 0 6px 16px rgba(66, 153, 225, 0.4);
-        }
-
-        .currency-dropdown {
-            position: absolute;
-            background: white;
-            border-radius: 12px;
-            max-height: 200px;
-            overflow-y: auto;
-            width: 90%;
-            display: none;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-            border: 1px solid #e2e8f0;
-            z-index: 1000;
-        }
-
-        .currency-dropdown.show {
-            display: block;
-        }
-
-        .currency-option {
-            padding: 10px 16px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .currency-option:hover {
-            background: #f0f7ff;
-            color: #4a9eff;
         }
 
         .rate-info {
-            font-size: 14px;
-            color: #718096;
+            font-size: 13px;
+            color: var(--text-secondary);
             text-align: center;
-            margin-top: 10px;
-            padding: 8px 16px;
-            background: #f7fafc;
+            padding: var(--spacing-sm) var(--spacing-md);
+            background: var(--bg-hover);
             border-radius: 20px;
         }
 
         .select-mode-button {
             width: 100%;
-            margin-top: 15px;
-            padding: 12px 20px;
+            padding: var(--spacing-md);
             border: none;
-            border-radius: 12px;
-            background: linear-gradient(135deg, #00b4db 0%, #0083b0 100%);
+            border-radius: var(--radius-lg);
+            background: #3498db;
             color: white;
-            font-weight: 600;
+            font-weight: 500;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: var(--spacing-sm);
         }
 
         .select-mode-button:hover {
+            background: #2980b9;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 180, 219, 0.3);
         }
 
-        .select-mode-button.active {
-            background: linear-gradient(135deg, #ff6b6b 0%, #ee5253 100%);
+        .currency-dropdown {
+            position: absolute;
+            background: white;
+            border-radius: var(--radius-lg);
+            width: calc(100% - 30px);
+            display: none;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-color);
+            z-index: 1000;
+            left: 15px;
+            max-height: 300px;
+            display: flex;
+            flex-direction: column;
         }
 
-        .select-mode-button i {
-            font-size: 18px;
+        .currency-search {
+            position: sticky;
+            top: 0;
+            padding: var(--spacing-md);
+            background: white;
+            border-bottom: 1px solid var(--border-color);
+            z-index: 2;
+            flex-shrink: 0;
         }
 
-        /* Custom scrollbar */
-        .currency-dropdown::-webkit-scrollbar {
+        .currency-search input {
+            width: 100%;
+            padding: var(--spacing-sm) var(--spacing-md);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            font-size: 14px;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+
+        .currency-search input:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px var(--primary-light);
+        }
+
+        .currency-list {
+            overflow-y: auto;
+            max-height: 250px;
+            padding: var(--spacing-sm) 0;
+            overscroll-behavior: contain;
+            -webkit-overflow-scrolling: touch;
+            flex: 1;
+            min-height: 0;
+        }
+
+        .currency-option {
+            padding: var(--spacing-sm) var(--spacing-md);
+            cursor: pointer;
+            transition: background 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .currency-option:hover {
+            background: var(--bg-hover);
+        }
+
+        .currency-option-left {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+        }
+
+        .currency-code-option {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .currency-name {
+            color: var(--text-secondary);
+            font-size: 0.9em;
+        }
+
+        ::-webkit-scrollbar {
             width: 8px;
         }
 
-        .currency-dropdown::-webkit-scrollbar-track {
+        ::-webkit-scrollbar-track {
             background: #f1f1f1;
             border-radius: 4px;
         }
 
-        .currency-dropdown::-webkit-scrollbar-thumb {
-            background: #cbd5e0;
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-color);
             border-radius: 4px;
         }
 
-        .currency-dropdown::-webkit-scrollbar-thumb:hover {
-            background: #a0aec0;
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-secondary);
+        }
+
+        .app-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--spacing-sm);
+            font-size: 12px;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--border-color);
+            margin-top: var(--spacing-md);
+        }
+
+        .app-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+        }
+
+        .app-info a:hover {
+            opacity: 0.8;
         }
     </style>
 </head>
@@ -166,15 +285,15 @@
 <body>
     <div class="currency-container">
         <div id="fromCurrency" class="currency-box">
-            <div class="currency-code">USD</div>
-            <div class="currency-amount">1.00</div>
+            <div class="currency-code" contenteditable="true" spellcheck="false">USD</div>
+            <div class="currency-amount" contenteditable="true" spellcheck="false">1.00</div>
         </div>
 
         <button class="switch-button">⇅</button>
 
         <div id="toCurrency" class="currency-box">
-            <div class="currency-code">RUB</div>
-            <div class="currency-amount">60.00</div>
+            <div class="currency-code" contenteditable="true" spellcheck="false">RUB</div>
+            <div class="currency-amount" contenteditable="true" spellcheck="false">60.00</div>
         </div>
 
         <div class="rate-info">1 USD = 60.00 RUB</div>
