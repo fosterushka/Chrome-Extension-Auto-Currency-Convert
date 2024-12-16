@@ -1,10 +1,10 @@
 {
   "manifest_version": 3,
-  "name": "Currency Converter",
+  "name": "PricyMorph",
   "description": "Automatically convert currencies on any webpage",
   "version": "1.0.0",
   "icons": {
-    "128": "assets/img/Menu.jpg"
+    "128": "assets/img/demo.gif"
   },
   "action": {
     "default_popup": "popup.html"

@@ -1,5 +1,3 @@
-console.warn('CurrencyConverter by @fosterushka 2019-2025');
-
 class DOMCurrencyConverter {
     constructor() {
         this.rates = null;

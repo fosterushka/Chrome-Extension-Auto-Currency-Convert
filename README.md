@@ -1,27 +1,24 @@
-# Price Converter - Chrome Extension 🌐💰
+# PricyMorph 🔄🌍
 
-⚙️ **Work In Progress** ⚠️ Still has a lot of bugs.
+#### 🔥 A powerful Chrome Extension that lets you convert currencies effortlessly on any website! Simply select an element in the DOM, and it does the rest. 🌍💱
 
-ℹ️ **For reduced RAM usage, the extension will only work when you click on it once.**
-
-🔥 A Google Chrome Extension that helps you convert currency on any website !
-
-| 🎥 Demo  | 📋 Concept Menu |
-|-------|---------|
-| ![Concept Menu](assets/img/Menu.jpg)  | ![Demo](assets/img/demo.jpg)      |
+![Demo](assets/img/demo.gif)
 
 ## 📢 Notice
 ### <span style="color:red">🐞 Found a bug? <br> Please open an issue! Your help is greatly appreciated! 🙏🔧</span>
 
 ### [Download](https://github.com/AydievMansur/price_parse_chrome/archive/master.zip) ⚡️ **WIP**
 
-##### 🚀 ROADMAP!
+##### 🚀 Features:
 
-- 👌 Friendly UI
-- 🔓 Open API (as a free service for website integration)
-- ~~MultiSite Support~~
-- ~~Chrome Integration~~
-- Deploy to Chrome Store
+- Easy & friendly UI
+- A multi site selector support
+- Any chrome based browser support
+- No metric collection
+- Open source
+- Regular updates
+- Lifetime free
+
 
 🙌 You can also:
 
